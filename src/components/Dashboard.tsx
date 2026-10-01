@@ -262,7 +262,7 @@ export function Dashboard() {
   );
 }
 
-function Kpi({ icon: I, label, value, tone }: { icon: typeof Zap; label: string; value: string; tone?: "warn" | "crit" }) {
+function Kpi({ icon: I, label, value, tone }: { icon: typeof Zap; label: string; value: string; tone?: "warn" | "crit" | undefined }) {
   return (
     <div className="panel flex items-center gap-3 p-3">
       <I className={`h-5 w-5 ${tone === "crit" ? "text-destructive" : tone === "warn" ? "text-warning" : "text-primary"}`} />
