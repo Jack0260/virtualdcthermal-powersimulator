@@ -62,7 +62,7 @@ export function Dashboard() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [racks]);
 
-  const sel = racks.find((r) => r.id === selected) ?? racks[0];
+  const sel = (racks.find((r) => r.id === selected) ?? racks[0])!;
   const selPred = preds.get(sel.id)!;
   const totalKw = racks.reduce((s, r) => s + r.powerKw, 0);
   const avgInlet = racks.reduce((s, r) => s + r.inlet, 0) / racks.length;

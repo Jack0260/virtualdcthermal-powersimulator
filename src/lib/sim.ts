@@ -57,7 +57,7 @@ function slopeOf(arr: number[]): number {
   const n = arr.length;
   if (n < 4) return 0;
   let sx = 0, sy = 0, sxy = 0, sxx = 0;
-  for (let i = 0; i < n; i++) { sx += i; sy += arr[i]; sxy += i * arr[i]; sxx += i * i; }
+  for (let i = 0; i < n; i++) { sx += i; const v = arr[i]!; sy += v; sxy += i * v; sxx += i * i; }
   const d = n * sxx - sx * sx;
   return d === 0 ? 0 : (n * sxy - sx * sy) / d;
 }
